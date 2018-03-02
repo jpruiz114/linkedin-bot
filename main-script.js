@@ -1,4 +1,4 @@
-var countOfPagesScrolled = 10;
+var countOfPagesScrolled = 50;
 var searchPhrase = "Developer";
 
 function scrollDown(height, countOfPagesScrolled) {
@@ -17,20 +17,20 @@ function sendRequest() {
 	$.each($('.mn-person-info__occupation'), function() {
         $(this).each(function() {
 			var currentElement = $(this);
-			console.dir(currentElement);
+			//console.dir(currentElement);
 			
 			var content = $.trim($(currentElement).text());
-			console.log('content' + ' = ' + content);
+			//console.log('content' + ' = ' + content);
 			
 			if (content.indexOf(searchPhrase) !== -1) {
-				console.log('found one match');
+				//console.log('found one match');
 				
 				var parent3UP = $(this).parent().parent().parent();
-				console.dir(parent3UP);
+				//console.dir(parent3UP);
 				
 				// find child where attribute equals data-control-name
 				var inviteButton = $(parent3UP).find("[data-control-name='" + 'invite' + "']");
-				console.dir(inviteButton);
+				//console.dir(inviteButton);
 				
 				$(inviteButton).click();
 				contactsNum++;
