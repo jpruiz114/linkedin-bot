@@ -1,4 +1,4 @@
-var countOfPagesScrolled = 100;
+var countOfPagesScrolled = 200;
 var searchPhrase = ['seo', 'sem', 'hr manager', 'recruiter', 'headhunder', 'digital marketing', 'google analytics', 'internet marketer', 'talent acquisition', 'human resources'];
 
 function scrollDown(height, countOfPagesScrolled) {
@@ -8,7 +8,7 @@ function scrollDown(height, countOfPagesScrolled) {
             scrollDown(document.body.clientHeight, --countOfPagesScrolled);
         } else
             return sendRequest();
-    }, 1500);
+    }, 3000);
 }
 
 function sendRequest() {
