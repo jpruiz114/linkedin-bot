@@ -1,5 +1,5 @@
-var countOfPagesScrolled = 5000;
-var searchPhrase = ['seo', 'sem', 'recruiter', 'headhunder', 'digital marketing', 'google analytics', 'internet marketer'];
+var countOfPagesScrolled = 500;
+var searchPhrase = "Recruiter";
 
 function scrollDown(height, countOfPagesScrolled) {
     scroll(0, document.body.clientHeight);
@@ -22,29 +22,19 @@ function sendRequest() {
 			var content = $.trim($(currentElement).text());
 			//console.log('content' + ' = ' + content);
 			
-			var lowercaseContent = content.toLowerCase();
-			//console.log('lowercaseContent' + ' = ' + lowercaseContent);
-			
-			$.each(
-				searchPhrase,
-				function (index, currentDescription) {
-					if (lowercaseContent.indexOf(currentDescription) !== -1) {
-						//console.log(lowercaseContent);
-						
-						//console.log('found one match');
-						
-						var parent3UP = $(this).parent().parent().parent();
-						//console.dir(parent3UP);
-						
-						// find child where attribute equals data-control-name
-						var inviteButton = $(parent3UP).find("[data-control-name='" + 'invite' + "']");
-						//console.dir(inviteButton);
-						
-						$(inviteButton).click();
-						contactsNum++;
-					}
-				}
-			);
+			if (content.indexOf(searchPhrase) !== -1) {
+				//console.log('found one match');
+				
+				var parent3UP = $(this).parent().parent().parent();
+				//console.dir(parent3UP);
+				
+				// find child where attribute equals data-control-name
+				var inviteButton = $(parent3UP).find("[data-control-name='" + 'invite' + "']");
+				//console.dir(inviteButton);
+				
+				$(inviteButton).click();
+				contactsNum++;
+			}
         });
     });
 	
