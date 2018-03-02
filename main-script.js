@@ -1,5 +1,5 @@
-var countOfPagesScrolled = 500;
-var searchPhrase = "Recruiter";
+var countOfPagesScrolled = 100;
+var searchPhrase = ['seo', 'sem', 'hr manager', 'recruiter', 'headhunder', 'digital marketing', 'google analytics', 'internet marketer'];
 
 function scrollDown(height, countOfPagesScrolled) {
     scroll(0, document.body.clientHeight);
@@ -13,7 +13,7 @@ function scrollDown(height, countOfPagesScrolled) {
 
 function sendRequest() {
     var contactsNum = 0;
-    
+
 	$.each($('.mn-person-info__occupation'), function() {
         $(this).each(function() {
 			var currentElement = $(this);
@@ -22,19 +22,35 @@ function sendRequest() {
 			var content = $.trim($(currentElement).text());
 			//console.log('content' + ' = ' + content);
 			
-			if (content.indexOf(searchPhrase) !== -1) {
-				//console.log('found one match');
-				
-				var parent3UP = $(this).parent().parent().parent();
-				//console.dir(parent3UP);
-				
-				// find child where attribute equals data-control-name
-				var inviteButton = $(parent3UP).find("[data-control-name='" + 'invite' + "']");
-				//console.dir(inviteButton);
-				
-				$(inviteButton).click();
-				contactsNum++;
-			}
+			var lowercaseContent = content.toLowerCase();
+			//console.log('lowercaseContent' + ' = ' + lowercaseContent);
+			
+			var currentDOM = $(this);
+			
+			$.each(
+				searchPhrase,
+				function (index, currentDescription) {
+					if (lowercaseContent.indexOf(currentDescription) !== -1) {
+						console.log(lowercaseContent);
+						
+						console.log('found one match');
+						
+						console.log('--------------------------------------------------');
+						
+						var parent3UP = $(currentDOM).parent().parent().parent();
+						//console.dir(parent3UP);
+						
+						// find child where attribute equals data-control-name
+						var inviteButton = $(parent3UP).find("[data-control-name='" + 'invite' + "']");
+						//console.dir(inviteButton);
+						
+						$(inviteButton).click();
+						contactsNum++;
+						
+						return true;
+					}
+				}
+			);
         });
     });
 	
