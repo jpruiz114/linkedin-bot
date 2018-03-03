@@ -1,5 +1,5 @@
-var countOfPagesScrolled = 200;
-var searchPhrase = ['seo', 'sem', 'hr manager', 'recruiter', 'headhunder', 'digital marketing', 'google analytics', 'internet marketer', 'talent acquisition', 'human resources'];
+var countOfPagesScrolled = 100;
+var searchPhrase = ['seo', 'sem', 'hr manager', 'recruiter', 'headhunder', 'digital marketing', 'google analytics', 'internet marketer', 'talent acquisition', 'human resources', 'copywriter'];
 
 function scrollDown(height, countOfPagesScrolled) {
     scroll(0, document.body.clientHeight);
