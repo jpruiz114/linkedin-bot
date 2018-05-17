@@ -14,7 +14,7 @@ function scrollDown(height, countOfPagesScrolled) {
 function sendRequest() {
     var contactsNum = 0;
 
-    $.each($('.mn-person-info__occupation'), function () {
+    $.each($('.pymk-card__occupation'), function () {
         $(this).each(function () {
             var currentElement = $(this);
             //console.dir(currentElement);
@@ -37,7 +37,7 @@ function sendRequest() {
 
                         console.log('--------------------------------------------------');
 
-                        var parent3UP = $(currentDOM).parent().parent().parent();
+                        var parent3UP = $(currentDOM).parent().parent().parent().parent();
                         //console.dir(parent3UP);
 
                         // find child where attribute equals data-control-name
