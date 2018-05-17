@@ -1,5 +1,5 @@
 # linkedin-bot
-simple js script for automatic adding contacts
+JavaScript script to automate adding contacts in LinkedIn
 
 ![linkedin-bot](https://raw.githubusercontent.com/jpruiz114/linkedin-bot/master/images/b7f6ca42f44f684341ae93781cf208a2.gif)
 
